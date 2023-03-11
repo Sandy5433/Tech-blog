@@ -1,11 +1,13 @@
 <!-- Loop over each object in the blogposts array -->
 {{#each blogposts as |blogpost| }}
-<div class="row mb-4 blogpost">
-  <div class="col-md-5">
-    <h2>
-      <a href="/blogpost/{{blogpost.id}}">{{blogpost.title}}</a>
-    </h2>
-    <p>Posted by {{blogpost.user.name}} on {{format_date blogpost.date_created}}</p>
+<div class="blogPost">
+  {{!-- "row mb-4 blogpost" --}}
+  <div class="blogTitle">
+    {{!-- class="col-md-5" --}}
+    <span class="titleLine">
+      <a id="white" href="/blogpost/{{blogpost.id}}">{{blogpost.title}}</a>
+    </span>
+    <span class="titleLine" id="author">Posted by {{blogpost.user.username}} on {{format_date blogpost.date_created}}</span>
   </div>
   <div class="col-md-7">
     <p>
@@ -13,4 +15,6 @@
     </p>
   </div>
 </div>
+<div class="space"></div>
 {{/each}}
+

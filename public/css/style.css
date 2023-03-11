@@ -32,7 +32,6 @@ header, .project:not(:last-child) {
   padding: 10px;
   font-size: 20px;
 }
-
 #author {
   font-size: 13px;
   float: right;
@@ -43,7 +42,9 @@ header, .project:not(:last-child) {
   background-color: #065b83;
   color: white;
 }
-
+#white {
+  color: white;
+}
 .blogContent {
   padding: 10px;
 }
@@ -64,4 +65,34 @@ header, .project:not(:last-child) {
 
 .commentSection {
   padding: 10px;
+}
+
+#newPostBtn {
+  font-size: 20px;
+  color: white;
+  background-color: #065b83;
+  padding: 10px;
+  border-radius: 5px;
+}
+.postList {
+  display: inline-block;
+}
+.space {
+  padding: 10px;
+  background-color: white;
+}
+.currentPost {
+  background-color: #b9b2b2b5;
+  padding: 5px;
+}
+#deleteComm {
+  float: right;
+}
+.commSection {
+  display:inline;
+}
+
+#submitComm {
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
