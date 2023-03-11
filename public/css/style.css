@@ -22,3 +22,46 @@ header, .project:not(:last-child) {
   font-weight: bold;
   margin-left: -5px;
 }
+
+.blogPost {
+  border-style: solid;
+}
+
+.titleLine {
+  display: inline-block;
+  padding: 10px;
+  font-size: 20px;
+}
+
+#author {
+  font-size: 13px;
+  float: right;
+}
+
+.blogTitle {
+  font-weight: bold;
+  background-color: #065b83;
+  color: white;
+}
+
+.blogContent {
+  padding: 10px;
+}
+
+.commentForm {
+  margin-top: 20px;
+  border-style: solid;
+}
+
+.commentHeader {
+  background-color: #065b83;
+  padding: 20px;
+}
+
+.commentLabel, #commentContent {
+  display: block;
+}
+
+.commentSection {
+  padding: 10px;
+}

@@ -1,10 +1,47 @@
-<div class="text-center">
-  <h2>{{title}}</h2>
-  <p>{{content}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  </p>
-  <p>
-    <button class="btn btn-primary" id="addCommentBtn">Add comment</button>
-  </p>
+<div class="blogPost">
+<div class="blogTitle">
+  <span class="titleLine">{{title}}</span>
+  <span class="titleLine" id="author">Posted by {{user.username}} on {{format_date date_created}}</span>
 </div>
+  <p class="blogContent">{{content}}</p>
+</div>
+{{!-- <hr/> --}}
+<form class="commentForm">
+      
+    <div class="commentHeader"></div>
+      <div class="commentSection">
+        {{!-- class="form-group" --}}
+        <label for="commentContent" class="commentLabel">Comment</label>
+        <textarea class="form-input" id="commentContent" name="commentContent"></textarea>
+      </div>
+      <div>
+        {{!-- class="form-group" --}}
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+</form>
 
+    <hr/>
+
+ {{#if comments.length}}
+  <div class="blogpost-list">
+    {{!-- class="col-md-6 blogpost-list" --}}
+    <h3>Comments:</h3>
+
+    {{#each comments as |comment|}}
+    <div>
+      {{!-- class="row mb-2" --}}
+      <div>
+        {{!-- class="col-md-8" --}}
+        <p>{{comment.message}}</p>
+        <p>by {{comment.user.username}}</p>
+      </div>
+      <div>
+        {{!-- class="col-md-4" --}}
+        <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+
+<script src="/js/comment.js"></script>
