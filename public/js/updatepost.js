@@ -25,7 +25,31 @@ const updateBlogPost = async (event) => {
     }
   };
 
+  const delButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+      console.log(id)
+      const splitURL = window.location.href.split("/");
+    
+    const blog_id = splitURL[splitURL.length - 1];
+  
+      const response = await fetch(`/api/blogposts/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.replace(`/blogpost/${blog_id}`);
+      } else {
+        alert('Failed to delete post');
+      }
+    }
+  };
   
   document
   .querySelector('.update-blogpost-form')
   .addEventListener('submit', updateBlogPost);
+
+  document
+.querySelector('.editPost')
+.addEventListener('click', delButtonHandler);
+  

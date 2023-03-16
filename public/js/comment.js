@@ -1,6 +1,5 @@
 const addComment = async (event) => {
     event.preventDefault();
-    // document.querySelector('#comment-form').style.display = "block";
     const message = document.querySelector('#commentContent').value.trim();
   
     const splitURL = window.location.href.split("/");
@@ -42,18 +41,16 @@ const addComment = async (event) => {
       if (response.ok) {
         document.location.replace(`/blogpost/${blog_id}`);
       } else {
-        alert('Failed to delete post');
+        alert('Failed to delete comment');
       }
     }
   };
 
-  
   document
   .querySelector('.commentForm')
   .addEventListener('submit', addComment);
 
-  
 document
-.querySelector('.blogpost-list')
+.querySelector('.comment-post')
 .addEventListener('click', delButtonHandler);
 

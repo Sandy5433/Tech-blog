@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blogpost } = require('../../models');
+const { Blogpost, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
@@ -17,6 +17,8 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
+  console.log(req.params.id)
+  console.log(req.session.user_id)    
     const blogpostData = await Blogpost.destroy({
       where: {
         id: req.params.id,
@@ -31,6 +33,7 @@ router.delete('/:id', withAuth, async (req, res) => {
 
     res.status(200).json(blogpostData);
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
